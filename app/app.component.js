@@ -9,9 +9,15 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.appName = "Angular2 App";
+        this.todos = ['Apple', 'Banana', 'Orange'];
+        this.newTodo = '';
     }
     AppComponent.prototype.sayHello = function () {
         alert('Hey this ' + this.appName);
+    };
+    AppComponent.prototype.addTodo = function () {
+        this.todos.unshift(this.newTodo);
+        this.newTodo = '';
     };
     AppComponent = __decorate([
         core_1.Component({
