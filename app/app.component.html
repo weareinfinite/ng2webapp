@@ -9,6 +9,13 @@
   <span>Right Aligned Text</span>
 </md-toolbar>
 
+<ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/about">About</a></li>
+</ul>
+
+<router-outlet></router-outlet>
+
 <md-grid-list cols="4" >
    <md-grid-tile>
    	<button md-button (click)="sayHello()">Click</button>
