@@ -9,15 +9,19 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var material_1 = require('@angular/material');
+//Services 
+var github_service_1 = require('./services/github.service');
 var app_component_1 = require('./app.component');
+var github_component_1 = require('./github/github.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, material_1.MaterialModule.forRoot()],
-            declarations: [app_component_1.AppComponent],
-            bootstrap: [app_component_1.AppComponent]
+            declarations: [app_component_1.AppComponent, github_component_1.GithubComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [github_service_1.GithubService]
         })
     ], AppModule);
     return AppModule;

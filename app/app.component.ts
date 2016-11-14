@@ -12,6 +12,8 @@ export class AppComponent {
 
 	newTodo = '';
 
+	githubuser = 'saratonite';
+
 
 	sayHello(){
 		alert('Hey this '+ this.appName);

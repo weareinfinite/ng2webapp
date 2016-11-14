@@ -11,6 +11,7 @@ var AppComponent = (function () {
         this.appName = "Angular2 App";
         this.todos = ['Apple', 'Banana', 'Orange'];
         this.newTodo = '';
+        this.githubuser = 'saratonite';
     }
     AppComponent.prototype.sayHello = function () {
         alert('Hey this ' + this.appName);
