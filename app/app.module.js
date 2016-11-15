@@ -9,17 +9,31 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var material_1 = require('@angular/material');
+var http_1 = require('@angular/http');
+var router_1 = require('@angular/router');
 //Services 
 var github_service_1 = require('./services/github.service');
 var app_component_1 = require('./app.component');
 var github_component_1 = require('./github/github.component');
+var home_component_1 = require('./components/home/home.component');
+var about_component_1 = require('./components/about/about.component');
+var ROUTES = router_1.RouterModule.forRoot([
+    {
+        path: '',
+        component: home_component_1.HomeComponent
+    },
+    {
+        path: 'about',
+        component: about_component_1.AboutComponent
+    }
+]);
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, material_1.MaterialModule.forRoot()],
-            declarations: [app_component_1.AppComponent, github_component_1.GithubComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, material_1.MaterialModule.forRoot(), ROUTES],
+            declarations: [app_component_1.AppComponent, github_component_1.GithubComponent, home_component_1.HomeComponent, about_component_1.AboutComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [github_service_1.GithubService]
         })
