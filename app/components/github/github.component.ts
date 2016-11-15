@@ -1,9 +1,9 @@
 import {Component,Input,OnInit} from '@angular/core';
-import {GithubService} from '../services/github.service';
+import {GithubService} from './../../services/github.service';
 
 @Component({
 	selector:'github',
-	templateUrl:'./app/github/github.component.html'
+	templateUrl:'./app/components/github/github.component.html'
 
 })
 

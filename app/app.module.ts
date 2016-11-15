@@ -11,9 +11,10 @@ import { RouterModule }   from '@angular/router';
 import {GithubService} from './services/github.service';
 
 import { AppComponent }   from './app.component';
-import {GithubComponent} from  './github/github.component';
+import {GithubComponent} from  './components/github/github.component';
 import {HomeComponent} from  './components/home/home.component';
 import {AboutComponent} from  './components/about/about.component';
+import {TodoComponent} from  './components/todo/todo.component';
 
 
 
@@ -27,6 +28,10 @@ var ROUTES =  RouterModule.forRoot([
       {
       	path:'about',
       	component:AboutComponent
+      },
+      {
+        path:'todos',
+        component:TodoComponent
       }
     ]);
 
@@ -35,7 +40,7 @@ var ROUTES =  RouterModule.forRoot([
 
 @NgModule({
 	imports: [BrowserModule,FormsModule,HttpModule,MaterialModule.forRoot(),ROUTES],
-	declarations: [ AppComponent,GithubComponent,HomeComponent,AboutComponent],
+	declarations: [ AppComponent,GithubComponent,HomeComponent,AboutComponent,TodoComponent],
 	bootstrap: [AppComponent],
 	providers:[GithubService]
 })

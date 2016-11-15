@@ -14,9 +14,10 @@ var router_1 = require('@angular/router');
 //Services 
 var github_service_1 = require('./services/github.service');
 var app_component_1 = require('./app.component');
-var github_component_1 = require('./github/github.component');
+var github_component_1 = require('./components/github/github.component');
 var home_component_1 = require('./components/home/home.component');
 var about_component_1 = require('./components/about/about.component');
+var todo_component_1 = require('./components/todo/todo.component');
 var ROUTES = router_1.RouterModule.forRoot([
     {
         path: '',
@@ -25,6 +26,10 @@ var ROUTES = router_1.RouterModule.forRoot([
     {
         path: 'about',
         component: about_component_1.AboutComponent
+    },
+    {
+        path: 'todos',
+        component: todo_component_1.TodoComponent
     }
 ]);
 var AppModule = (function () {
@@ -33,7 +38,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, material_1.MaterialModule.forRoot(), ROUTES],
-            declarations: [app_component_1.AppComponent, github_component_1.GithubComponent, home_component_1.HomeComponent, about_component_1.AboutComponent],
+            declarations: [app_component_1.AppComponent, github_component_1.GithubComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, todo_component_1.TodoComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [github_service_1.GithubService]
         })
