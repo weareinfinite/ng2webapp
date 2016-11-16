@@ -1,4 +1,4 @@
-import {Component,Input,OnInit} from '@angular/core';
+import {Component,Input,OnInit,Inject} from '@angular/core';
 import {GithubService} from './../../services/github.service';
 
 @Component({
@@ -23,10 +23,12 @@ export class GithubComponent implements OnInit {
 
 	}
 
+
 	ngOnInit(){
 		console.log(this.username);
 
 		this.githubUser = this.githubService.getUser();
+		//var h = this.githubService.fetchUser();
 	}
 
 

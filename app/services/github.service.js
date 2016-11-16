@@ -7,10 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 require('rxjs/add/operator/toPromise');
+var Rx_1 = require('rxjs/Rx');
 var GithubService = (function () {
-    function GithubService() {
+    function GithubService(http) {
+        this.http = http;
+        this.apiEndPoint = 'https://api.github.com/';
         console.info('Github Service Initialized');
     }
+    GithubService.prototype.fetchUser = function () {
+        return this.http.get(this.apiEndPoint + 'users/saratonite').map(function (res) { return res.json(); })
+            .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
+    };
     GithubService.prototype.getUser = function () {
         return {
             "login": "saratonite",

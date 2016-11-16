@@ -15,6 +15,7 @@ var GithubComponent = (function () {
     GithubComponent.prototype.ngOnInit = function () {
         console.log(this.username);
         this.githubUser = this.githubService.getUser();
+        //var h = this.githubService.fetchUser();
     };
     __decorate([
         core_1.Input()

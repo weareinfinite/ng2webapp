@@ -1,15 +1,25 @@
-import { Injectable } from '@angular/core';
+import { Injectable }     from '@angular/core';
 
-import { Headers, Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 
 export class GithubService {
 
-	constructor(){
+	apiEndPoint = 'https://api.github.com/'
+
+	constructor(private http:Http){
 		console.info('Github Service Initialized');
+	}
+
+	fetchUser(){
+
+		return this.http.get(this.apiEndPoint + 'users/saratonite').map((res)=> res.json())
+		 .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
 	}
 
 	getUser(){
