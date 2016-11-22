@@ -6,16 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var github_service_1 = require('./../../services/github.service');
+var github_service_1 = require('../../services/github.service');
 var GithubComponent = (function () {
     function GithubComponent() {
         console.log('Github component initialized');
         this.githubService = new github_service_1.GithubService();
     }
     GithubComponent.prototype.ngOnInit = function () {
-        console.log(this.username);
+        console.info('ssss', this._githubService);
         this.githubUser = this.githubService.getUser();
-        //var h = this.githubService.fetchUser();
+        // this._user = this._githubService.fetchUser().subscribe(function(userdata){
+        // 	console.log('------------------------------------sss');
+        // });
     };
     __decorate([
         core_1.Input()
@@ -23,7 +25,8 @@ var GithubComponent = (function () {
     GithubComponent = __decorate([
         core_1.Component({
             selector: 'github',
-            templateUrl: './app/components/github/github.component.html'
+            templateUrl: './app/components/github/github.component.html',
+            providers: [github_service_1.GithubService]
         })
     ], GithubComponent);
     return GithubComponent;

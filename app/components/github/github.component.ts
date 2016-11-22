@@ -1,9 +1,11 @@
 import {Component,Input,OnInit,Inject} from '@angular/core';
-import {GithubService} from './../../services/github.service';
+import {GithubService} from '../../services/github.service';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
 	selector:'github',
-	templateUrl:'./app/components/github/github.component.html'
+	templateUrl:'./app/components/github/github.component.html',
+	providers:[GithubService]
 
 })
 
@@ -12,7 +14,9 @@ export class GithubComponent implements OnInit {
 
 	@Input() username :string;
 
-	githubUser:any;
+	public githubUser:any;
+
+	public _user:any;
 
 
 	constructor(){
@@ -25,10 +29,13 @@ export class GithubComponent implements OnInit {
 
 
 	ngOnInit(){
-		console.log(this.username);
+		console.info('ssss',this._githubService);
 
 		this.githubUser = this.githubService.getUser();
-		//var h = this.githubService.fetchUser();
+		// this._user = this._githubService.fetchUser().subscribe(function(userdata){
+		// 	console.log('------------------------------------sss');
+		// });
+
 	}
 
 
