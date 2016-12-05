@@ -37,7 +37,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, material_1.MaterialModule.forRoot(), ROUTES],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule, material_1.MaterialModule.forRoot(), ROUTES],
             declarations: [app_component_1.AppComponent, github_component_1.GithubComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, todo_component_1.TodoComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [github_service_1.GithubService]

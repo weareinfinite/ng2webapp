@@ -1,4 +1,4 @@
-import {Component,Input,OnInit,Inject} from '@angular/core';
+import {Component,Inject , Input,OnInit,Inject} from '@angular/core';
 import {GithubService} from '../../services/github.service';
 import {Observable} from 'rxjs/Rx';
 
@@ -19,19 +19,18 @@ export class GithubComponent implements OnInit {
 	public _user:any;
 
 
-	constructor(){
+	constructor(private githubSrv: GithubService){
+
+		console.log(this.githubSrv);
 
 		console.log('Github component initialized');
-
-		this.githubService = new GithubService();
 
 	}
 
 
 	ngOnInit(){
-		console.info('ssss',this._githubService);
 
-		this.githubUser = this.githubService.getUser();
+		this.githubUser = this.githubSrv.getUser();
 		// this._user = this._githubService.fetchUser().subscribe(function(userdata){
 		// 	console.log('------------------------------------sss');
 		// });

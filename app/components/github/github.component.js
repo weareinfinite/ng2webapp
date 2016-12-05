@@ -8,13 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require('@angular/core');
 var github_service_1 = require('../../services/github.service');
 var GithubComponent = (function () {
-    function GithubComponent() {
+    function GithubComponent(githubSrv) {
+        this.githubSrv = githubSrv;
+        console.log(this.githubSrv);
         console.log('Github component initialized');
-        this.githubService = new github_service_1.GithubService();
     }
     GithubComponent.prototype.ngOnInit = function () {
-        console.info('ssss', this._githubService);
-        this.githubUser = this.githubService.getUser();
+        this.githubUser = this.githubSrv.getUser();
         // this._user = this._githubService.fetchUser().subscribe(function(userdata){
         // 	console.log('------------------------------------sss');
         // });

@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var Observable_1 = require('rxjs/Observable');
 var GithubService = (function () {
     function GithubService(http) {
         this.http = http;
@@ -14,7 +15,7 @@ var GithubService = (function () {
     }
     GithubService.prototype.fetchUser = function () {
         return this.http.get(this.apiEndPoint + 'users/saratonite').map(function (res) { return res.json(); })
-            .catch(function (error) { return Observable.throw(error.json().error || 'Server error'); });
+            .catch(function (error) { return Observable_1.Observable.throw(error.json().error || 'Server error'); });
     };
     GithubService.prototype.getUser = function () {
         return {
